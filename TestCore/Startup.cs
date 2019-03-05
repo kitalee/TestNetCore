@@ -59,6 +59,7 @@ namespace TestCore
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+                routes.MapRoute("movies", "{controller=Movies}/{action=Index}/{id?}");
             });
         }
     }

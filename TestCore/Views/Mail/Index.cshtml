@@ -1,0 +1,37 @@
+﻿@model TestCore.Models.MailModel
+@{
+    ViewData["Title"] = "Mail Test Page";
+}
+
+<div class="text-center">
+    <h3>Mail Test Page</h3>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div>
+    <form method="post">
+        <div>
+            <label asp-for="Title"></label>
+            <input asp-for="Title" class="form-control" value="test mail" />
+        </div>
+        <div>
+            <label asp-for="From"></label>
+            <input asp-for="From" class="form-control" value="tester@gmail.com" />
+        </div>
+        <div>
+            <label asp-for="To"></label>
+            <input asp-for="To" class="form-control" value="alcufk@naver.com,donggeon.lee@outlook.com,donggeon.lee@keymedia.com" />
+        </div>
+        <div>
+            <label asp-for="Cc"></label>
+            <input asp-for="Cc" class="form-control" />
+        </div>
+        <div>
+            <label asp-for="Body"></label>
+            <textarea asp-for="Body" class="form-control">testtesttest</textarea>
+        </div>
+        <div>
+            <input type="submit" value="Send" />
+        </div>
+    </form>
+</div>
