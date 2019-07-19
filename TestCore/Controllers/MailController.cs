@@ -45,9 +45,14 @@ namespace TestCore.Controllers
                 mail.IsBodyHtml = true;
                 mail.Body = model.Body;
 
-                //using (var client = new SmtpClient("smtp.gmail.com", 465))
-                using (var client = new SmtpClient("192.168.100.4", 25))
+                using (var client = new SmtpClient("smtp.gmail.com", 587))
+                //using (var client = new SmtpClient("192.168.100.4", 25))
                 {
+                    System.Net.NetworkCredential credential = new System.Net.NetworkCredential("bcrichldk@gmail.com", "hacker81@");
+                    client.EnableSsl = true;
+                    client.UseDefaultCredentials = false;
+                    client.Credentials = credential;
+                    client.DeliveryMethod = SmtpDeliveryMethod.Network;
                     client.Send(mail);
                 }
 
